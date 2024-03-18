@@ -11,12 +11,19 @@ function setup() {
   hint: use the "new" keyword with the constructor function MyClass()
   assign the result of this function to myObj1 and then to myObj2
   */
+myObj1 = new MyClass (100, 100);
+myObj2 = new MyClass( 300, 200);
+//console.log(myObj1);
 }
 
 function draw() {
   background(200);
   // add code here to make your objects move and display on canvas
   
+myObj1.display();
+myObj1.move();
+myObj2.display();
+myObj2.move();
 }
 
 //Class constructor:
@@ -36,8 +43,19 @@ function MyClass(tempX, tempY){
     this.y += this.ySpeed;
     
     //maybe add some code to keep it on the canvas ...
+  if (this.xSpeed);
+  if (this.ySpeed);
+  if (this.x > width || this.x < 0) {
+  this.xSpeed *=-1;
   }
+
+  if (this.y > height || this.y < 0) {
+  this.ySpeed *=-1;
   
+ }
+}
+  
+
   this.display = function (){
     
     push(); // create a transparency layer for the object
